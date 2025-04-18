@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
+// import { useEffect } from "react";
 import Link from "next/link";
 import CollectionCard from "@/components/shared/CollectionCard";
 import collectionsData from "@/data/collections.json";
@@ -9,8 +10,8 @@ interface CollectionDropdownProps {
 }
 
 const CollectionDropdown = ({ isActive, onMouseEnter }: CollectionDropdownProps) => {
-  const [collections, setCollections] = useState(collectionsData);
-
+  const [collections] = useState(collectionsData);
+  // setCollections should be used to fetch the collections from the database
   return (
     <div 
       className={`fixed left-0 right-0 top-[88px] md:top-[104px] bg-white shadow-lg py-8 z-20 transition-all duration-300 ${

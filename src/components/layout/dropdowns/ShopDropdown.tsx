@@ -1,89 +1,9 @@
 import Link from "next/link";
-import Grid from "@/components/shared/Grid";
-import ProductCard from "@/components/shared/ProductCard";
+// import Grid from "@/components/shared/Grid";
+// import ProductCard from "@/components/shared/ProductCard";
 
 // Mock data - in a real app this would come from an API or context
-const featuredProducts = [
-  {
-    id: "p1",
-    name: "Flow Harmony Liz",
-    brand: "SONICPULSE",
-    image: "/next.svg", // Using next.svg as a placeholder, replace with actual images
-    rating: 5.0,
-    specs: {
-      "Driver size": "40mm",
-      "Product weight": "323 g",
-      "Battery": "38h"
-    },
-    variants: [
-      {
-        id: "v1-1",
-        color: "White",
-        colorCode: "#FFFFFF",
-        price: 52099,
-        compareAtPrice: null
-      },
-      {
-        id: "v1-2",
-        color: "Black",
-        colorCode: "#000000",
-        price: 52099,
-        compareAtPrice: null
-      }
-    ],
-    slug: "flow-harmony-liz",
-    badge: "hot" as const,
-    salePercentage: null
-  },
-  {
-    id: "p2",
-    name: "Audiophile Pro X",
-    brand: "SOUNDWAVE",
-    image: "/next.svg",
-    rating: 4.8,
-    specs: {
-      "Driver size": "45mm",
-      "Product weight": "298 g",
-      "Battery": "42h"
-    },
-    variants: [
-      {
-        id: "v2-1",
-        color: "Black",
-        colorCode: "#000000",
-        price: 45999,
-        compareAtPrice: 59999
-      }
-    ],
-    slug: "audiophile-pro-x",
-    badge: "sale" as const,
-    salePercentage: 23
-  },
-  {
-    id: "p3",
-    name: "TrueSound Elite",
-    brand: "ECHOBEATS",
-    image: "/next.svg",
-    rating: 4.5,
-    specs: {
-      "Driver size": "8mm",
-      "Product weight": "58 g",
-      "Battery": "24h"
-    },
-    variants: [
-      {
-        id: "v3-1",
-        color: "Black",
-        colorCode: "#000000",
-        price: 35499,
-        compareAtPrice: null
-      }
-    ],
-    slug: "truesound-wireless-elite",
-    badge: "new" as const,
-    salePercentage: null
-  }
-];
+
 
 interface ShopDropdownProps {
   isActive: boolean;
