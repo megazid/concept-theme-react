@@ -42,6 +42,16 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
+  // Add the Compare link in the navigation links array
+  const navigationLinks = [
+    { text: 'Home', href: '/' },
+    { text: 'Shop', href: '/shop', hasDropdown: true, dropdownType: 'shop' },
+    { text: 'Collections', href: '/collections', hasDropdown: true, dropdownType: 'collection' },
+    { text: 'Compare', href: '/compare' },
+    { text: 'Explore', href: '#', hasDropdown: true, dropdownType: 'explore' },
+    { text: 'Contact', href: '/contact' },
+  ];
+
   return (
     <div className="relative">
       <header 
@@ -80,47 +90,29 @@ const Header = () => {
             onMouseLeave={handleNavigationLeave}
           >
             <ul className="flex items-center space-x-8">
-              <li className="relative">
-                <button 
-                  className="font-medium text-gray-800 hover:text-black py-2 transition-colors relative group"
-                  onMouseEnter={() => handleMouseEnter('shop')}
-                  aria-expanded={activeDropdown === 'shop'}
-                >
-                  Shop
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
-                </button>
-              </li>
-              <li className="relative">
-                <button 
-                  className="font-medium text-gray-800 hover:text-black py-2 transition-colors relative group"
-                  onMouseEnter={() => handleMouseEnter('collection')}
-                  aria-expanded={activeDropdown === 'collection'}
-                >
-                  Collection
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
-                </button>
-              </li>
-              <li className="relative" ref={exploreRef}>
-                <button 
-                  className="font-medium text-gray-800 hover:text-black py-2 transition-colors relative group"
-                  onMouseEnter={() => handleMouseEnter('explore')}
-                  aria-expanded={activeDropdown === 'explore'}
-                >
-                  Explore
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
-                </button>
-                <ExploreDropdown isActive={activeDropdown === 'explore'} />
-              </li>
-              <li>
-                <Link 
-                  href="/contact" 
-                  className="font-medium text-gray-800 hover:text-black py-2 transition-colors relative group"
-                  onMouseEnter={handleMouseLeave}
-                >
-                  Contact
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
-                </Link>
-              </li>
+              {navigationLinks.map((link, index) => (
+                <li key={index} className="relative">
+                  {link.hasDropdown ? (
+                    <button 
+                      className="font-medium text-gray-800 hover:text-black py-2 transition-colors relative group"
+                      onMouseEnter={() => handleMouseEnter(link.dropdownType)}
+                      aria-expanded={activeDropdown === link.dropdownType}
+                    >
+                      {link.text}
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
+                    </button>
+                  ) : (
+                    <Link 
+                      href={link.href} 
+                      className="font-medium text-gray-800 hover:text-black py-2 transition-colors relative group"
+                      onMouseEnter={handleMouseLeave}
+                    >
+                      {link.text}
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
+                    </Link>
+                  )}
+                </li>
+              ))}
             </ul>
           </nav>
 
@@ -178,37 +170,30 @@ const Header = () => {
             <div className="h-full flex flex-col pt-20 px-6">
               <nav className="flex-1">
                 <ul className="space-y-6 text-xl">
-                  <li>
-                    <Link href="/shop" className="block py-2 font-medium" onClick={handleCloseMenu}>
-                      Shop
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/collection" className="block py-2 font-medium" onClick={handleCloseMenu}>
-                      Collection
-                    </Link>
-                  </li>
-                  <li>
-                    <details className="group">
-                      <summary className="list-none flex justify-between items-center py-2 font-medium cursor-pointer">
-                        Explore
-                        <svg className="w-4 h-4 transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </summary>
-                      <ul className="pl-4 mt-2 space-y-2">
-                        <li><Link href="#" className="block py-2" onClick={handleCloseMenu}>Our Story</Link></li>
-                        <li><Link href="#" className="block py-2" onClick={handleCloseMenu}>Our Blogs</Link></li>
-                        <li><Link href="#" className="block py-2" onClick={handleCloseMenu}>FAQ</Link></li>
-                        <li><Link href="#" className="block py-2" onClick={handleCloseMenu}>Contact Us</Link></li>
-                      </ul>
-                    </details>
-                  </li>
-                  <li>
-                    <Link href="/contact" className="block py-2 font-medium" onClick={handleCloseMenu}>
-                      Contact
-                    </Link>
-                  </li>
+                  {navigationLinks.map((link, index) => (
+                    <li key={index}>
+                      {link.hasDropdown && link.dropdownType === 'explore' ? (
+                        <details className="group">
+                          <summary className="list-none flex justify-between items-center py-2 font-medium cursor-pointer">
+                            {link.text}
+                            <svg className="w-4 h-4 transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </summary>
+                          <ul className="pl-4 mt-2 space-y-2">
+                            <li><Link href="#" className="block py-2" onClick={handleCloseMenu}>Our Story</Link></li>
+                            <li><Link href="#" className="block py-2" onClick={handleCloseMenu}>Our Blogs</Link></li>
+                            <li><Link href="#" className="block py-2" onClick={handleCloseMenu}>FAQ</Link></li>
+                            <li><Link href="#" className="block py-2" onClick={handleCloseMenu}>Contact Us</Link></li>
+                          </ul>
+                        </details>
+                      ) : (
+                        <Link href={link.href} className="block py-2 font-medium" onClick={handleCloseMenu}>
+                          {link.text}
+                        </Link>
+                      )}
+                    </li>
+                  ))}
                 </ul>
               </nav>
               <div className="py-8 border-t border-gray-200 mt-8">
@@ -254,6 +239,9 @@ const Header = () => {
         isActive={activeDropdown === 'collection'} 
         onMouseEnter={() => handleMouseEnter('collection')}
       />
+
+      {/* Explore Dropdown */}
+      {activeDropdown === 'explore' && <ExploreDropdown isActive={activeDropdown === 'explore'} onMouseEnter={() => handleMouseEnter('explore')} />}
     </div>
   );
 };

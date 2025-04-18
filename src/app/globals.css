@@ -38,3 +38,106 @@ body {
 .animate-fadeDown {
     animation: fadeDown 0.2s ease-out forwards;
 }
+
+@layer base {
+    /* ... existing base styles ... */
+}
+
+@layer components {
+    /* ... existing component styles ... */
+}
+
+@layer utilities {
+    /* ... existing utility styles ... */
+    /* Simple animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes growWidth {
+        from {
+            width: 0;
+        }
+        to {
+            width: 100%;
+        }
+    }
+    @keyframes slowZoom {
+        from {
+            transform: scale(1);
+        }
+        to {
+            transform: scale(1.1);
+        }
+    }
+    @keyframes pulse {
+        0% {
+            opacity: 0.6;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0.6;
+        }
+    }
+    @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    .animate-fadeIn {
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+    .animate-fadeInUp {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+    }
+    .animate-growWidth {
+        animation: growWidth 0.8s ease-out forwards;
+        width: 0;
+    }
+    .animate-slowZoom {
+        animation: slowZoom 20s ease-out infinite alternate;
+    }
+    .animate-pulse {
+        animation: pulse 2s ease-in-out infinite;
+    }
+    .animate-slideInLeft {
+        animation: slideInLeft 0.8s ease-out forwards;
+        opacity: 0;
+    }
+    .animate-slideInRight {
+        animation: slideInRight 0.8s ease-out forwards;
+        opacity: 0;
+    }
+}
