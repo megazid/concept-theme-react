@@ -1,0 +1,148 @@
+[{
+        "id": "p1",
+        "name": "Flow Harmony Liz",
+        "brand": "SONICPULSE",
+        "image": "/images/products/flow-harmony-liz.jpg",
+        "rating": 5.0,
+        "specs": {
+            "Driver size": "40mm",
+            "Product weight": "323 g",
+            "Battery": "38h"
+        },
+        "variants": [{
+                "id": "v1-1",
+                "color": "White",
+                "colorCode": "#FFFFFF",
+                "price": 52099,
+                "compareAtPrice": null
+            },
+            {
+                "id": "v1-2",
+                "color": "Black",
+                "colorCode": "#000000",
+                "price": 52099,
+                "compareAtPrice": null
+            },
+            {
+                "id": "v1-3",
+                "color": "Brown",
+                "colorCode": "#964B00",
+                "price": 52099,
+                "compareAtPrice": null
+            },
+            {
+                "id": "v1-4",
+                "color": "Navy",
+                "colorCode": "#000080",
+                "price": 52099,
+                "compareAtPrice": null
+            }
+        ],
+        "slug": "flow-harmony-liz",
+        "badge": "hot",
+        "salePercentage": null
+    },
+    {
+        "id": "p2",
+        "name": "Audiophile Pro X",
+        "brand": "SOUNDWAVE",
+        "image": "/images/products/audiophile-pro.jpg",
+        "rating": 4.8,
+        "specs": {
+            "Driver size": "45mm",
+            "Product weight": "298 g",
+            "Battery": "42h"
+        },
+        "variants": [{
+                "id": "v2-1",
+                "color": "Black",
+                "colorCode": "#000000",
+                "price": 45999,
+                "compareAtPrice": 59999
+            },
+            {
+                "id": "v2-2",
+                "color": "Silver",
+                "colorCode": "#C0C0C0",
+                "price": 45999,
+                "compareAtPrice": 59999
+            }
+        ],
+        "slug": "audiophile-pro-x",
+        "badge": "sale",
+        "salePercentage": 23
+    },
+    {
+        "id": "p3",
+        "name": "TrueSound Wireless Elite",
+        "brand": "ECHOBEATS",
+        "image": "/images/products/truesound-wireless.jpg",
+        "rating": 4.5,
+        "specs": {
+            "Driver size": "8mm",
+            "Product weight": "58 g",
+            "Battery": "24h"
+        },
+        "variants": [{
+                "id": "v3-1",
+                "color": "Black",
+                "colorCode": "#000000",
+                "price": 35499,
+                "compareAtPrice": null
+            },
+            {
+                "id": "v3-2",
+                "color": "White",
+                "colorCode": "#FFFFFF",
+                "price": 35499,
+                "compareAtPrice": null
+            },
+            {
+                "id": "v3-3",
+                "color": "Green",
+                "colorCode": "#4CAF50",
+                "price": 35499,
+                "compareAtPrice": null
+            },
+            {
+                "id": "v3-4",
+                "color": "Blue",
+                "colorCode": "#2196F3",
+                "price": 35499,
+                "compareAtPrice": null
+            },
+            {
+                "id": "v3-5",
+                "color": "Red",
+                "colorCode": "#F44336",
+                "price": 35499,
+                "compareAtPrice": null
+            }
+        ],
+        "slug": "truesound-wireless-elite",
+        "badge": "new",
+        "salePercentage": null
+    },
+    {
+        "id": "p4",
+        "name": "SonicBoom Tower Speaker",
+        "brand": "BASSMASTER",
+        "image": "/images/products/sonicboom-tower.jpg",
+        "rating": 4.9,
+        "specs": {
+            "Output": "1200W",
+            "Product weight": "15.2 kg",
+            "Bluetooth": "5.2"
+        },
+        "variants": [{
+            "id": "v4-1",
+            "color": "Black",
+            "colorCode": "#000000",
+            "price": 125999,
+            "compareAtPrice": 149999
+        }],
+        "slug": "sonicboom-tower-speaker",
+        "badge": "sale",
+        "salePercentage": 16
+    }
+]

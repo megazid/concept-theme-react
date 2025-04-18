@@ -1,0 +1,33 @@
+[{
+        "id": "c1",
+        "name": "Headphones",
+        "description": "Surround yourself in sound",
+        "image": "/images/collections/collection-02.webp",
+        "productCount": 15,
+        "slug": "headphones"
+    },
+    {
+        "id": "c2",
+        "name": "Earphones",
+        "description": "Small design, great sound",
+        "image": "/images/collections/collection-03.webp",
+        "productCount": 8,
+        "slug": "earphones"
+    },
+    {
+        "id": "c3",
+        "name": "Speakers",
+        "description": "The world's most immersive sound",
+        "image": "/images/collections/collection-04.webp",
+        "productCount": 12,
+        "slug": "speakers"
+    },
+    {
+        "id": "c4",
+        "name": "Accessories",
+        "description": "Optimal condition for years",
+        "image": "/images/collections/collection-07.webp",
+        "productCount": 23,
+        "slug": "accessories"
+    }
+]
